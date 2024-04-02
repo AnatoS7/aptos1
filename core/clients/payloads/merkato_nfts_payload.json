@@ -1,0 +1,30 @@
+{
+  "query": "query fetchCollectionListedItems($where: listings_bool_exp!, $order_by: [listings_order_by!], $offset: Int, $limit: Int!) {\naptos {\nlistings(where: $where, order_by: $order_by, offset: $offset, limit: $limit) {\n      id\n      price\n      price_str\n      block_time\n      seller\n      market_name\n      nonce\n      contract {\n        key\n      }\n      nft {\n        id\n        token_id\n        token_id_index\n        name\n        media_url\n        media_type\n        ranking\n        owner\n        burned\n        staked\n        version\n        chain_state\n        claimable\n        claimable_by\n        claimable_reason\n        claimable_contract_key\n        topBid: bids(where: {status: {_eq: \"active\"}}, order_by: {price: desc}, limit: 1) {\n          id\n          bidder\n          price\n        }\n        lastSale: actions(where: {type: {_in: [\"buy\", \"accept-collection-bid\", \"accept-bid\"]}}, order_by: {block_time: desc}, limit: 1) {\n          price\n        }\n        contract {\n          commission: default_commission {\n            key\n            market_fee\n            market_name\n            royalty\n            is_custodial\n          }\n        }\n      }\n    }\n}\n}",
+  "variables": {
+    "limit": 40,
+    "where": {
+      "collection_id": {
+        "_eq": "9ead11ba-5b6a-42b4-a131-5cee87cbf7b1"
+      },
+      "listed": {
+        "_eq": true
+      },
+      "market_name": {
+        "_in": [
+          "tradeport"
+        ]
+      },
+      "nft": {}
+    },
+    "order_by": [
+      {
+        "price": "asc_nulls_last"
+      },
+      {
+        "market_name": "desc_nulls_last"
+      }
+    ],
+    "offset": 0
+  },
+  "operationName": "fetchCollectionListedItems"
+}
