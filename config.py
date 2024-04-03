@@ -65,7 +65,7 @@ BALANCE_KEEP_AMOUNT_AFTER_TRIM = [0, 0]
 ##############################################################################################
 
 # Aptos RPC url.
-RPC = "https://rpc.ankr.com/http/aptos/v1"
+RPC = "https://rpc.ankr.com/premium-http/aptos/4bfe28b7474927d0f04e039f6c068b9193d92eb3c6192ca32f170fe239bcf444/v1"
 
 # Нужно ли автоматически делать свап, если не хватает определенного токена для действия
 AUTOSWAP = True
@@ -222,7 +222,7 @@ OKX_WITHDRAW_DEVIATION = [0.011, 0.011]
 OKX_API_KEY = "238e7e04-b58c-4f81-bbbb-271374eea2ac"
 
 # Секрет от API ключа от OKX.
-OKX_API_SECRET = "238e7e04-b58c-4f81-bbbb-271374eea2ac"
+OKX_API_SECRET = "452EF40E87D0C65A02ADA7123D1403B4"
 
 # Пароль от API ключа от OKX.
 OKX_API_PASSWORD = "Tolyaos13!"
